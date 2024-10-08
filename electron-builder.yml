@@ -1,0 +1,16 @@
+appId: com.dessower.launcher
+productName: DessowerLauncher
+directories:
+  output: release-builds  # Où seront générés les fichiers d'installation
+files:
+  - dist/**
+  - src/**  # Inclure les fichiers nécessaires comme dist/ où Webpack génère les fichiers
+  - package.json  # Inclure package.json pour que l'application ait accès aux dépendances
+  - preload.js    # Inclure preload.js s'il est dans la racine
+win:
+  target:
+    - nsis  # Format pour Windows (fichier d'installation .exe)
+nsis:
+  oneClick: false  # Option pour une installation en un seul clic ou personnalisée
+  perMachine: false  # Installation pour un seul utilisateur ou pour tous les utilisateurs
+  allowToChangeInstallationDirectory: true  # Permet de choisir le répertoire d'installation
